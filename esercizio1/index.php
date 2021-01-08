@@ -90,17 +90,17 @@ $music_db = [
 <div class="container">
     <div class="row">
         <?php 
-        foreach ($music_db as $song => $key) {
+        foreach ($music_db as $cd => $value) {
             
         ?> 
         <div class="col-3">
            
         <?php 
-          echo "<img src='".$key["poster"]."'alt=''>";
-          echo "<h2>".$key["title"]."</h2>";
-          echo "<p>".$key["author"]."</p>";
-          echo "<p>".$key["genre"]."</p>";
-          echo "<p>".$key["year"]."</p>"; 
+          echo "<img src='".$value["poster"]."'alt=''>";
+          echo "<h2>".$value["title"]."</h2>";
+          echo "<p>".$value["author"]."</p>";
+          echo "<p>".$value["genre"]."</p>";
+          echo "<p>".$value["year"]."</p>"; 
         ?>
         </div>
         
