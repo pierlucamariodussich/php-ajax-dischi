@@ -5,17 +5,14 @@ let myApp = new Vue ({
   data:{
      cds:[],
      genreInput:'All',
+     search: '',
+     textFilter: '',
   },
   mounted: function(){
 
-    axios.get("http://localhost:8888/php-ajax-dischi/esercizio2/server.php",{
-    params:{}
-    })
+    axios.get("http://localhost:8888/php-ajax-dischi/bonus/server.php")
     .then((result) =>{
-
       this.cds = (result.data);
-        console.log(this.cds)
-
       });
 
   },
@@ -30,6 +27,16 @@ let myApp = new Vue ({
         }
       });
     }
+  },
+
+  methods:{
+    filter(){
+      axios.get("http://localhost:8888/php-ajax-dischi/bonus/server.php?filter=" + this.textFilter)
+      .then((result) =>{
+      this.cds = (result.data);
+      });
+    }
   }
+
 
 });
